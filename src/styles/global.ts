@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { ThemeType } from '../styles/global'
+import { ThemeType } from '.'
 export default createGlobalStyle<ThemeType>`
   * {
     margin: 0;
