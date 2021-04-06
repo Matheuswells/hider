@@ -10,17 +10,18 @@ export default createGlobalStyle`
   body {
     background: ${props => props.theme.background};
     color: ${props => props.theme.text};
-    font: 400 16px Roboto, sans-serif;
+    font: 400 16px Anonymous Pro, sans-serif;
   }
    .btn {
     background-color:${props => props.theme.primary};
-    color: ${props => props.theme.background};
-    padding: 12px 20px;
+    color: ${props => props.theme.text};
+    padding: 14px 20px;
     border: none;
     outline: 0;
     display: inline-block;
     cursor: pointer;
     border-radius: 2px;
+    margin-left: 10px;
   }
 
 `
