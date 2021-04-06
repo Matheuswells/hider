@@ -68,7 +68,7 @@ const Home: React.FC = () => {
                 placeholder="1$SDg3as=vaJ"
                 cols={30}
                 rows={10}
-                value={text.replace(' ', '-')}
+                value={text.replaceAll(' ', '-')}
               ></textarea>
             </div>
           </div>
