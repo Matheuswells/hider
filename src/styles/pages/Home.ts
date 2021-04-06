@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   min-width: 800px;
-
+  min-height: 900px;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -126,6 +126,9 @@ export const Container = styled.div`
     background-color: ${props => props.theme.primary};
     color: ${props => props.theme.text};
   }
-  .HiderContent {
+  .footer {
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
   }
 `
