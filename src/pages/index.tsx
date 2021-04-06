@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Container } from '../styles/pages/Home'
-import { generateKeyPair } from 'node:crypto'
 // import logo from '../assets/logo.png'
 const Home: React.FC = () => {
   const [title, setTitle] = useState('')
@@ -69,7 +68,7 @@ const Home: React.FC = () => {
                 placeholder="1$SDg3as=vaJ"
                 cols={30}
                 rows={10}
-                value={text.replaceAll('.', '*')}
+                value={text.replace(' ', '-')}
               ></textarea>
             </div>
           </div>
