@@ -15,13 +15,14 @@ export default createGlobalStyle`
    .btn {
     background-color:${props => props.theme.primary};
     color: ${props => props.theme.text};
-    padding: 14px 20px;
+    padding: 12px 20px;
     border: none;
     outline: 0;
     display: inline-block;
     cursor: pointer;
     border-radius: 2px;
     margin-left: 10px;
+    border-radius: 5px;
   }
 
 `

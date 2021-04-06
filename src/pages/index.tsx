@@ -1,11 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
-
+import Link from 'next/link'
 import { Container } from '../styles/pages/Home'
 // import logo from '../assets/logo.png'
 const Home: React.FC = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Home</title>
       </Head>
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
           <div className="imageLogoContainer">
             {/* <img src={logo} alt="logo" width="165px" height="165px" /> */}
           </div>
-          <h1>Hider</h1>
+          <h1 className="title">Hider</h1>
         </div>
         <form>
           <label>
@@ -27,7 +27,14 @@ const Home: React.FC = () => {
               placeholder="2d4d4fa6-2f4f1060-f63dda32-93d38a90"
             />
           </label>
-          <input type="button" value="Encrypt" className="btn" />
+          <div className="dropdown">
+            <input type="button" value="Ação" className="btn" />
+            <div className="dropdown-content">
+              <a href="#">Encriptar</a>
+              <a href="#">Encriptar com chave aleatoria</a>
+              <a href="#">Decriptar</a>
+            </div>
+          </div>
           <br />
           <div className="secondForm">
             <div className="textInputSide">
@@ -54,11 +61,15 @@ const Home: React.FC = () => {
             </div>
           </div>
         </form>
-        <p>
-          <p>&#127758; github.com/matheuswells</p>
-        </p>
+        <Link href="https://github.com/Matheuswells/hider">
+          <a target="_blank">
+            <p>
+              <p className="linkText">&#127758; github.com/matheuswells</p>
+            </p>
+          </a>
+        </Link>
       </Container>
-    </div>
+    </>
   )
 }
 
