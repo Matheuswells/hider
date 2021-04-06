@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-import { ThemeType } from '.'
-export default createGlobalStyle<ThemeType>`
+
+export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -8,13 +8,13 @@ export default createGlobalStyle<ThemeType>`
   }
 
   body {
-    background: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text};
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.text};
     font: 400 16px Roboto, sans-serif;
   }
    .btn {
-    background-color:${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.background};
+    background-color:${props => props.theme.primary};
+    color: ${props => props.theme.background};
     padding: 12px 20px;
     border: none;
     outline: 0;
