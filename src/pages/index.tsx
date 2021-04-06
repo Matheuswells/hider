@@ -8,8 +8,7 @@ const Home: React.FC = () => {
       <Head>
         <title>Home</title>
       </Head>
-      <h1>Home</h1>
-      <p>/index.tsx</p>
+      <h1>Hider</h1>
     </Container>
   )
 }
