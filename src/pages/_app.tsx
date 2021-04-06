@@ -1,17 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/global'
-import { lightTheme, darkTheme } from '../styles/theme'
+import theme from '../styles/theme'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const rickClick = false
-  const [theme, setTheme] = useState('light')
-
-  // const themeToggler = () => {
-  //   theme === 'light' ? setTheme('dark') : setTheme('light')
-  // }
 
   React.useEffect(() => {
     if (!rickClick) {
@@ -22,7 +17,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   }, [])
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme}>
       <Component {...pageProps} />
       <GlobalStyle />
     </ThemeProvider>
