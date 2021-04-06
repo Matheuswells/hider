@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 
 import { Container } from '../styles/pages/Home'
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 const Home: React.FC = () => {
   return (
     <div>
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <Container>
         <div className="logoContainer">
           <div className="imageLogoContainer">
-            <img src={logo} alt="logo" width="165px" height="165px" />
+            {/* <img src={logo} alt="logo" width="165px" height="165px" /> */}
           </div>
           <h1>Hider</h1>
         </div>
