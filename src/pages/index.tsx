@@ -7,15 +7,16 @@ const Home: React.FC = () => {
   const [key, setKey] = useState('')
   const [text, setText] = useState('')
   const [resp, setResp] = useState('')
-  const [defDict, setDefDict] = useState(
-    'qwe6rty0uiopa713sdfg84hjk2lçzx5c vb9nm'
-  )
+  const [defDict] = useState('qwe6rty0uiopa713sdfg84hjk2lçzx5c vb9nm')
   const [dict, setDict] = useState('qwe6rty0uiopa713sdfg84hjk2lçzx5c vb9nm')
-
+  // Example: it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout
   function genDict() {
     const positions = []
+    // Percorre a chave
     for (let y = 0; y <= key.length; y++) {
+      // para cada caractere da chave percorre o dicionario Padrão
       for (let x = 0; x <= defDict.length; x++) {
+        // Encontra a posição dos caracteres da chave no dicionario Padrão
         if (key[y] === defDict[x]) {
           if (x !== 38) {
             positions.push(x)
@@ -26,20 +27,21 @@ const Home: React.FC = () => {
     // console.log(positions)
     let parts, newDict
     const splitAt = index => x => [x.substring(0, index), x.substring(index)]
-
+    // Se a chave for maio que 0 embaralhe o dicionario Padrão e gere o novo dicionario
     if (positions.length > 0) {
       for (let x = 1; x <= positions.length; x++) {
         // console.log(positions[x - 1])
         parts = splitAt(positions[x - 1])(defDict)
       }
       newDict = parts[1]
+      newDict = reverseString(newDict)
       newDict = newDict.concat(parts[0])
 
       // console.log(parts + ' ' + 'newDict:' + newDict)
     }
     // console.log(newDict)
     setDict(newDict)
-    encript()
+    return newDict
   }
 
   function encript() {
@@ -47,11 +49,34 @@ const Home: React.FC = () => {
     const letterPositions = []
     for (let x = 0; x <= text.length - 1; x++) {
       letterPositions.push(defDict.indexOf(text[x]))
-      newText = newText.concat(dict[defDict.indexOf(text[x])])
+      newText = newText.concat(genDict()[defDict.indexOf(text[x])])
     }
 
     console.log(letterPositions)
     setResp(newText)
+  }
+
+  function decript() {
+    let newText = ''
+    const letterPositions = []
+    for (let x = 0; x <= text.length - 1; x++) {
+      letterPositions.push(genDict().indexOf(text[x]))
+      newText = newText.concat(defDict[genDict().indexOf(text[x])])
+    }
+    console.log(letterPositions)
+    setResp(newText)
+  }
+
+  function reverseString(str) {
+    return str.split('').reverse().join('')
+  }
+  const setLoweCase = () => {
+    setText(text.toLowerCase())
+    return text.toLowerCase()
+  }
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(resp)
   }
 
   function getKey() {
@@ -62,6 +87,7 @@ const Home: React.FC = () => {
   function getText() {
     return event => setText(event.target.value)
   }
+
   return (
     <>
       <Head>
@@ -87,15 +113,14 @@ const Home: React.FC = () => {
             />
           </label>
           <div className="dropdown">
-            <button className="btn">
+            <button className="btn" disabled>
               <p>
                 Menu <i className="arrow down"></i>
               </p>
             </button>
             <div className="dropdown-content">
-              <a onClick={genDict}>Encriptar</a>
-              <a href="#">Encriptar com chave aleatoria</a>
-              <a href="#">Decriptar</a>
+              <a onClick={encript}>Encriptar</a>
+              <a onClick={decript}>Decriptar</a>
             </div>
           </div>
           <br />
@@ -111,11 +136,13 @@ const Home: React.FC = () => {
                 cols={30}
                 rows={10}
                 onChange={getText()}
+                onKeyUp={setLoweCase}
               ></textarea>
             </div>
             <div className="textInputSide">
-              <p className="subtext">Resposta:</p>
+              <p className="subtext">Resposta (Clique na area para copiar):</p>
               <textarea
+                onClick={copyToClipboard}
                 readOnly={true}
                 name="value"
                 id=""
