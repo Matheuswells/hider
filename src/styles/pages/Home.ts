@@ -11,18 +11,21 @@ export const Container = styled.div`
   flex-direction: column;
 
   h1 {
-    font-size: 140px;
+    //font-size: 140px;
+    font-size: 20vh;
     margin-top: 40px;
     letter-spacing: 5px;
   }
 
   p {
+  }
+
+  .subtext {
     margin-top: 24px;
     margin-bottom: 5px;
     font-size: 18px;
     line-height: 32px;
   }
-
   a {
     text-decoration: none;
     color: inherit;
@@ -52,7 +55,7 @@ export const Container = styled.div`
     border: none;
     border-radius: 5px;
     padding: 12px 20px;
-    width: 600px;
+    width: 700px;
   }
   .inputType2 {
     color: ${props => props.theme.text};
@@ -61,7 +64,8 @@ export const Container = styled.div`
     border-radius: 5px;
     resize: none;
     padding: 12px 20px;
-    width: 320px;
+    width: 400px;
+    height: 40vh;
   }
   .inputType2:focus {
     border: none;
@@ -87,6 +91,7 @@ export const Container = styled.div`
   .linkText {
     cursor: pointer;
   }
+
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     display: inline-block;
@@ -130,5 +135,28 @@ export const Container = styled.div`
     margin-top: 10px;
     position: absolute;
     bottom: 10px;
+  }
+  @media (max-height: 700px), (max-width: 800px) {
+    .footer {
+      display: none !important;
+    }
+    h1 {
+      font-size: 10vh;
+    }
+    .textInputSide {
+      float: none;
+    }
+    .secondForm {
+      display: grid;
+      width: 100%;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      justify-content: center;
+    }
+    .inputType2 {
+      width: 90vh;
+      height: 50vh;
+    }
   }
 `

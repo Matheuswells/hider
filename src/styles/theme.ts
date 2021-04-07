@@ -4,5 +4,5 @@ const theme = {
   primary: '#3c579c',
   form: '#36393f'
 }
-
+// 3c579c
 export default theme
