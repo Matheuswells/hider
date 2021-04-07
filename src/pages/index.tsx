@@ -9,6 +9,7 @@ const Home: React.FC = () => {
   const [resp, setResp] = useState('')
   const [defDict] = useState('qwe6rty0uiopa713sdfg84hjk2lçzx5c vb9nm')
   const [dict, setDict] = useState('qwe6rty0uiopa713sdfg84hjk2lçzx5c vb9nm')
+
   // Example: it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout
   function genDict() {
     const positions = []
@@ -24,22 +25,19 @@ const Home: React.FC = () => {
         }
       }
     }
-    // console.log(positions)
+
     let parts, newDict
     const splitAt = index => x => [x.substring(0, index), x.substring(index)]
     // Se a chave for maio que 0 embaralhe o dicionario Padrão e gere o novo dicionario
     if (positions.length > 0) {
       for (let x = 1; x <= positions.length; x++) {
-        // console.log(positions[x - 1])
         parts = splitAt(positions[x - 1])(defDict)
       }
       newDict = parts[1]
       newDict = reverseString(newDict)
       newDict = newDict.concat(parts[0])
-
-      // console.log(parts + ' ' + 'newDict:' + newDict)
     }
-    // console.log(newDict)
+
     setDict(newDict)
     return newDict
   }
@@ -51,8 +49,6 @@ const Home: React.FC = () => {
       letterPositions.push(defDict.indexOf(text[x]))
       newText = newText.concat(genDict()[defDict.indexOf(text[x])])
     }
-
-    console.log(letterPositions)
     setResp(newText)
   }
 
@@ -63,7 +59,6 @@ const Home: React.FC = () => {
       letterPositions.push(genDict().indexOf(text[x]))
       newText = newText.concat(defDict[genDict().indexOf(text[x])])
     }
-    console.log(letterPositions)
     setResp(newText)
   }
 
