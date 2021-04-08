@@ -1,10 +1,10 @@
 # **Hider**
 
 ## **About this project**
-Hider is a Web application based on React.js / Next.js frameworks thats provider a simple encription/decription method of text
+Hider is a Web application based on [React.js](https://reactjs.org) / [Next.js](https://nextjs.org) frameworks thats provider a simple encription/decription method of text
 
 ## **How to use**
-This project has been deployed on Vercel and can be accessed by clicking here: [Hider](hider1.vercel.app) or acessing
+This project has been deployed on [Vercel](https://vercel.com) and can be accessed by clicking here: [Hider](hider1.vercel.app)
 
 
 ---
