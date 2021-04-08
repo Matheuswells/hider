@@ -1,4 +1,5 @@
 # **Hider**
+https://img.shields.io/github/v/release/matheuswells/hider?style=for-the-badge
 
 ## **About this project**
 Hider is a Web application based on [React.js](https://reactjs.org) / [Next.js](https://nextjs.org) frameworks thats provider a simple encription/decription method of text
