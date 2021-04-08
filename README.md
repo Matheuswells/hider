@@ -8,7 +8,33 @@ Hider is a Web application based on [React.js](https://reactjs.org) / [Next.js](
 This project has been deployed on [Vercel](https://vercel.com) and can be accessed by clicking here: [Hider](hider1.vercel.app)
 
 
+### **#1 Insert any word to be the encription key** _(Just lowercase letters and numbers)_
+<br/>
+<img src="https://raw.githubusercontent.com/Matheuswells/hider/main/docs/key.png"><br/>
+
+### **#2 Now insert any text to be encripted** _(Just lowercase letters and numbers)_
+<br/>
+<img src="https://raw.githubusercontent.com/Matheuswells/hider/main/docs/text.png"><br/>
+
+### **#3 Select encription option**
+<br/>
+
+<img src="https://raw.githubusercontent.com/Matheuswells/hider/main/docs/encBtn.png"><br/>
+
+### **#4 Get the encripted text**
+<br/>
+<img src="https://raw.githubusercontent.com/Matheuswells/hider/main/docs/encResp.png"><br/>
+
+### **#5 Now by clincking in the response textarea copy the encripted text and replace in the left side before click in the decriptoin option**
+<br/>
+<img src="https://raw.githubusercontent.com/Matheuswells/hider/main/docs/decBtn.png"><br/>
+
+### **#4 Get the decripted text**
+<br/>
+<img src="https://raw.githubusercontent.com/Matheuswells/hider/main/docs/decResp.png"><br/>
+
 ---
+
 ## **Also you can run this project on your machine**
 <br/>
 
